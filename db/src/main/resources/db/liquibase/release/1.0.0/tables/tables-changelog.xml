@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    
+    <changeSet id="create_student" author="shboland">
+        <createTable tableName="STUDENT">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+  
+<changeSet id="add_name_student" author="shboland">
+    <addColumn tableName="STUDENT">
+      <column name="NAME" type="varchar(255)" />
+    </addColumn>
+  </changeSet>
+  
+  
+    <changeSet id="create_details" author="shboland">
+        <createTable tableName="DETAILS">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+  
+<changeSet id="add_number_details" author="shboland">
+    <addColumn tableName="DETAILS">
+      <column name="NUMBER" type="BIGINT" />
+    </addColumn>
+  </changeSet>
+  
+  <changeSet id="change_id_details" author="shboland">
+    <renameColumn tableName="DETAILS" oldColumnName="id" newColumnName="student_id" />
+  </changeSet>
+  
+  
+    <changeSet id="create_result" author="shboland">
+        <createTable tableName="RESULT">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+  
+<changeSet id="add_grade_result" author="shboland">
+    <addColumn tableName="RESULT">
+      <column name="GRADE" type="BIGINT" />
+    </addColumn>
+  </changeSet>
+  
+  <changeSet id="add_student_id_result" author="shboland">
+    <addColumn tableName="RESULT">
+      <column name="STUDENT_ID" type="int" />
+    </addColumn>
+  </changeSet>
+  
+
+    <changeSet id="create_course" author="shboland">
+        <createTable tableName="COURSE">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+  
+<changeSet id="add_master_course" author="shboland">
+    <addColumn tableName="COURSE">
+      <column name="MASTER" type="BOOLEAN" />
+    </addColumn>
+  </changeSet>
+  
+  <!-- @Input -->
+
+</databaseChangeLog>

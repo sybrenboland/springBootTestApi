@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="add_foreignkey_student_details" author="shboland" >
+        <addForeignKeyConstraint baseColumnNames="STUDENT_ID"
+                                 baseTableName="DETAILS"
+                                 constraintName="FK_STUDENT_DETAILS"
+                                 referencedColumnNames="ID"
+                                 referencedTableName="STUDENT"/>
+    </changeSet>
+    
+<changeSet id="add_foreignkey_student_result" author="shboland" >
+        <addForeignKeyConstraint baseColumnNames="STUDENT_ID"
+                                 baseTableName="RESULT"
+                                 constraintName="FK_STUDENT_RESULT"
+                                 referencedColumnNames="ID"
+                                 referencedTableName="STUDENT"/>
+    </changeSet>
+    
+<!-- @Input -->
+
+</databaseChangeLog>
